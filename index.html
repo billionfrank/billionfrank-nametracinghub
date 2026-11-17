@@ -1,12 +1,784 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Name Tracing Generator</title>
+  <title>Name Tracing Generator — Free Printable Name Tracing Worksheets</title>
+  <meta name="description" content="Create free printable name tracing worksheets in seconds. Type a name, pick a paper size, and print a dotted-line handwriting practice sheet for preschool and kindergarten kids.">
+  <link rel="canonical" href="https://nametracinghub.com/">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&family=Edu+QLD+Beginner:wght@400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      color-scheme: light;
+      --primary: #2563eb;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    [hidden] { display: none !important; }
+    a { color: var(--primary); text-underline-offset: 3px; }
+    button, input, select, textarea { font: inherit; }
+    button, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 1px solid var(--primary);
+      border-radius: 8px;
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    button:hover, .button:hover { background: #1d4ed8; }
+    button.secondary {
+      border-color: var(--border);
+      background: white;
+      color: var(--text);
+    }
+    button.secondary:hover { background: #f3f4f6; }
+    :focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
+    input:not([type="checkbox"]), select, textarea {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid #9ca3af;
+      border-radius: 6px;
+      background: white;
+      color: var(--text);
+      padding: 10px 12px;
+    }
+    input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--primary); }
+    textarea { resize: vertical; min-height: 130px; }
+    label { display: block; font-weight: 600; }
+    label > input:not([type="checkbox"]), label > select, label > textarea {
+      display: block;
+      margin-top: 6px;
+      font-weight: 400;
+    }
+    .check { display: flex; gap: 10px; align-items: center; font-weight: 400; }
+    .check input { flex-shrink: 0; }
+    .container { width: min(1280px, calc(100% - 32px)); margin: auto; }
+    .site-header { border-bottom: 1px solid var(--border); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 0; }
+    .brand { color: var(--text); font-weight: 750; text-decoration: none; }
+    .nav-links { display: flex; gap: 16px; }
+    .nav-links a { font-size: 14px; }
+    .intro { padding: 28px 0 22px; }
+    h1 { margin: 0 0 6px; font-size: clamp(27px, 4vw, 38px); line-height: 1.2; }
+    .intro p { margin: 0; color: var(--muted); }
+    .workspace { display: grid; grid-template-columns: 350px minmax(0, 1fr); gap: 28px; align-items: start; }
+    .workspace > *, .sidebar { min-width: 0; }
+    .sidebar { display: grid; gap: 20px; }
+    .card { padding: 20px; border: 1px solid var(--border); border-radius: 8px; }
+    .card h3 { margin: 0 0 16px; font-size: 19px; }
+    .controls { display: grid; gap: 17px; }
+    .help, .status { font-size: 13px; color: var(--muted); }
+    .help { margin: 6px 0 0; }
+    .status { margin: 12px 0 0; min-height: 21px; }
+    .error { color: #b91c1c; }
+    .field-title { display: flex; gap: 8px; align-items: center; }
+    .field-title label { flex: 1; }
+    .field-title + select { margin-top: 6px; }
+    .lock {
+      display: inline-block;
+      position: relative;
+      width: 11px;
+      height: 9px;
+      margin: 5px 2px 1px;
+      border: 1.5px solid currentColor;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .lock::before {
+      content: "";
+      position: absolute;
+      width: 7px;
+      height: 6px;
+      left: .5px;
+      top: -7px;
+      border: 1.5px solid currentColor;
+      border-bottom: 0;
+      border-radius: 5px 5px 0 0;
+    }
+    .lock-button {
+      min-height: 32px;
+      padding: 5px 9px;
+      font-size: 12px;
+      background: white;
+      color: var(--primary);
+      border-color: var(--border);
+    }
+    .lock-button:hover { background: #eff6ff; }
+    .batch { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .batch button { width: 100%; margin-top: 10px; }
+    .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .plan { border: 1px solid var(--border); border-radius: 8px; padding: 12px; min-width: 0; }
+    .plan.pro { border-color: var(--primary); }
+    .plan h4 { margin: 0; font-size: 17px; }
+    .price { font-size: 25px; font-weight: 750; margin: 8px 0 0; line-height: 1.2; }
+    .billing { font-size: 12px; color: var(--muted); margin: 4px 0 12px; }
+    .plan ul { padding-left: 17px; font-size: 13px; }
+    .plan li { margin: 8px 0; }
+    .plan button { width: 100%; padding: 8px; font-size: 13px; }
+    .preview-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+    .preview-toolbar p { margin: 0; font-size: 14px; color: var(--muted); }
+    .preview-stage { min-width: 0; }
+    .paper-shell {
+      position: relative;
+      width: 100%;
+      max-width: 794px;
+      margin: 0 auto 22px;
+    }
+    .paper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 794px;
+      height: 1123px;
+      padding: 46px;
+      background: white;
+      box-shadow: 0 3px 18px rgb(17 24 39 / 12%);
+      transform-origin: top left;
+      overflow: hidden;
+    }
+    .paper.letter { height: 1028px; }
+    .paper-heading { margin-bottom: 38px; }
+    .paper-heading p { margin: 0; }
+    .worksheet-title { font-size: 24px; font-weight: 700; }
+    .worksheet-instruction { margin-top: 8px !important; font-size: 14px; color: var(--muted); }
+    .name-field { margin-top: 24px !important; font-size: 15px; }
+    .name-line { display: inline-block; width: 260px; border-bottom: 1px solid #9ca3af; margin-left: 10px; }
+    .practice-rows { display: grid; gap: 36px; }
+    .trace-row { position: relative; height: 60px; }
+    .guide { position: absolute; left: 0; right: 0; height: 0; border-top: 1px solid #9ca3af; }
+    .guide.top { top: 0; }
+    .guide.middle { top: 30px; border-top-style: dashed; }
+    .guide.bottom { top: 59px; }
+    .trace-row.no-guides .guide { display: none; }
+    .name-slots { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; height: 60px; }
+    .trace-slot { min-width: 0; height: 60px; }
+    .trace-text {
+      display: inline-block;
+      white-space: nowrap;
+      font-family: "Edu QLD Beginner", cursive;
+      font-weight: 400;
+      font-size: var(--letter-size, 60px);
+      line-height: 60px;
+      color: #d1d5db;
+      transform-origin: left center;
+    }
+    .paper.cursive .trace-text { font-family: "Dancing Script", cursive; }
+    .watermark {
+      position: absolute;
+      right: 6mm;
+      bottom: 6mm;
+      color: #cbd5e1;
+      font-size: 10px;
+      white-space: nowrap;
+    }
+    .reading { max-width: 850px; margin: 54px auto; }
+    .reading section { margin-bottom: 36px; }
+    .reading h2 { font-size: 25px; line-height: 1.3; margin: 0 0 18px; }
+    .reading h3 { font-size: 18px; margin: 24px 0 8px; }
+    .reading p { margin: 0 0 16px; }
+    .site-footer { border-top: 1px solid var(--border); padding: 24px 0; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 20px; font-size: 14px; }
+    dialog {
+      width: min(430px, calc(100% - 32px));
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+    }
+    dialog::backdrop { background: rgb(17 24 39 / 45%); }
+    dialog h2 { margin: 0 0 12px; font-size: 23px; }
+    dialog p { color: var(--muted); }
+    .dialog-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+
+    @media (max-width: 850px) {
+      .workspace { grid-template-columns: 1fr; }
+      .sidebar { grid-template-columns: 1fr; }
+      .intro { padding-top: 22px; }
+    }
+    @media (max-width: 420px) {
+      .nav-links { gap: 10px; }
+      .brand { font-size: 14px; }
+      .nav-links a { font-size: 12px; }
+      .card { padding: 16px; }
+    }
+
+    @page { size: A4; margin: 12mm; }
+
+    @media print {
+      html, body { margin: 0 !important; padding: 0 !important; background: white; }
+      body > :not(main),
+      main > :not(.workspace),
+      .sidebar,
+      .preview-toolbar { display: none !important; }
+      main.container, .workspace, .preview, .preview-stage {
+        display: block !important;
+        width: auto !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .paper-shell {
+        position: static !important;
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        max-width: none !important;
+        margin: 0 !important;
+        break-inside: avoid;
+        break-after: page;
+        page-break-after: always;
+      }
+      .paper-shell:last-child { break-after: auto; page-break-after: auto; }
+      .paper {
+        position: relative !important;
+        width: 100% !important;
+        height: 272mm !important;
+        padding: 6mm !important;
+        transform: none !important;
+        box-shadow: none !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      body[data-paper="letter"] .paper { height: 254mm !important; }
+    }
+  </style>
+  <style id="page-rule">@page { size: A4; margin: 12mm; }</style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this name tracing generator free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The free version creates one name worksheet at a time on A4 paper and includes a small watermark. You can change the letter size, hide the guide lines, and print again. Pro costs $4.99 one-time and adds watermark-free pages, batches of up to 30 names, Letter paper, and a cursive font mode."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What age is this worksheet designed for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The worksheet is intended for children around ages four to seven, with adult support as needed. Readiness varies, so age alone should not determine the task. A child who finds pencil work tiring can start with a shorter session, larger letters, or finger tracing before trying to write independently."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I save a worksheet as a PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, if your browser or operating system offers Save as PDF in its print dialog. Generate the worksheet, select Print, and choose that destination. Match the paper size to the generator, use portrait orientation, and disable browser headers and footers. Preview the result before saving or printing a classroom set."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are children's names uploaded or stored?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This page processes names in your browser and does not upload them or save them in localStorage. Google Fonts loads the handwriting fonts, and the payment link opens an external checkout. The Pro flag is stored locally in this browser. Printed files and PDFs remain wherever you choose to save them."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does cursive mode teach every letter connection?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Cursive mode provides a script-font model for copying, but it does not supply stroke-order arrows or guarantee the exact connections used by a particular school. Compare the model with the handwriting style your child is learning. Use a teacher's demonstration when a letter shape or joining stroke needs explanation."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
-<body>
-  <h1>Name Tracing Generator</h1>
+<body data-paper="a4">
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="/">Name Tracing Hub</a>
+      <div class="nav-links">
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="intro">
+      <h1>Name Tracing Generator</h1>
+      <p>Make a personalized handwriting practice sheet, ready to print in seconds.</p>
+    </div>
+
+    <div class="workspace">
+      <aside class="sidebar" aria-label="Worksheet settings and pricing">
+        <section class="card" aria-labelledby="generator-title">
+          <h3 id="generator-title">Create your worksheet</h3>
+          <form id="generator-form" class="controls">
+            <label for="name">
+              Child’s name
+              <input id="name" name="name" value="Emma" maxlength="40"
+                autocomplete="off" spellcheck="false" required
+                aria-describedby="name-help">
+            </label>
+            <p id="name-help" class="help">Use English letters, spaces, apostrophes, or hyphens. Maximum 40 characters.</p>
+            <button type="submit">Generate</button>
+
+            <div>
+              <div class="field-title">
+                <label for="paper-size">Paper size</label>
+                <button type="button" class="lock-button" data-paywall="Letter paper is included with Pro." data-lock-entry aria-label="Unlock Letter paper">
+                  <span class="lock" aria-hidden="true"></span>Letter
+                </button>
+              </div>
+              <select id="paper-size">
+                <option value="a4">A4</option>
+                <option value="letter">Letter (Pro)</option>
+              </select>
+            </div>
+
+            <label for="letter-size">
+              Letter size
+              <select id="letter-size">
+                <option value="60">Large</option>
+                <option value="48">Medium</option>
+                <option value="36">Small</option>
+              </select>
+            </label>
+
+            <label class="check">
+              <input id="guides" type="checkbox" checked>
+              Show guide lines
+            </label>
+
+            <label class="check">
+              <input id="blank-name" type="checkbox">
+              Add a blank name at the start
+            </label>
+
+            <label class="check">
+              <input id="cursive" type="checkbox">
+              Cursive mode
+              <span class="lock" data-lock aria-hidden="true"></span>
+            </label>
+          </form>
+
+          <div class="batch">
+            <label for="batch-names">
+              Batch names
+              <span class="lock" data-lock aria-hidden="true"></span>
+              <textarea id="batch-names" spellcheck="false"
+                maxlength="1230" placeholder="Emma&#10;Noah&#10;Olivia"
+                aria-describedby="batch-help"></textarea>
+            </label>
+            <p class="help" id="batch-help">One name per line. Up to 30 names with Pro.</p>
+            <button id="generate-all" type="button" class="secondary">
+              <span class="lock" data-lock aria-hidden="true"></span>
+              Generate All
+            </button>
+          </div>
+          <p id="status" class="status" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="card" id="pricing" aria-labelledby="pricing-title">
+          <h3 id="pricing-title">Pricing</h3>
+          <div class="plans">
+            <div class="plan">
+              <h4>Free</h4>
+              <p class="price">$0</p>
+              <p class="billing">Free to use</p>
+              <ul>
+                <li>One name at a time</li>
+                <li>A4 paper</li>
+                <li>Three letter sizes</li>
+                <li>Small watermark</li>
+              </ul>
+            </div>
+            <div class="plan pro">
+              <h4>Pro</h4>
+              <p class="price">$4.99</p>
+              <p class="billing">One-time payment</p>
+              <ul>
+                <li>No watermark</li>
+                <li>Batch up to 30 names</li>
+                <li>A4 and Letter layouts</li>
+                <li>Cursive mode</li>
+              </ul>
+              <button id="upgrade" type="button" data-paywall="Unlock watermark-free worksheets, batch generation, Letter paper, and cursive mode.">Get Pro</button>
+              <p id="pro-active" class="help" hidden>Pro is active in this browser.</p>
+            </div>
+          </div>
+        </section>
+      </aside>
+
+      <section class="preview" aria-label="Worksheet preview">
+        <div class="preview-toolbar">
+          <p id="preview-info">A4 · 1 page</p>
+          <button id="print" type="button">Print</button>
+        </div>
+        <div id="pages" class="preview-stage"></div>
+        <noscript>Please enable JavaScript to generate and print a worksheet.</noscript>
+      </section>
+    </div>
+
+    <article class="reading">
+      <section>
+        <h2>How to use this name tracing generator</h2>
+        <p>Type the name you want your child to practice, keeping the capitalization you normally use. Select Generate to create a worksheet with three practice bands. Each band has two name-sized spaces: a light gray example on the left and an empty space on the right. Children can trace the example first, then try writing the same name beside it. Check the spelling before printing, especially when preparing materials for a classroom.</p>
+        <p>Choose Large, Medium, or Small letters to match the amount of writing space your child needs. Large letters give beginners more room to explore each shape. The guide lines show the top, middle, and bottom of the writing band; turn them off when you want an open copying activity. The blank-name option adds a separate identification line near the top of the worksheet, so children can label their own work.</p>
+        <p>Select Print when the preview looks right. In the browser’s print dialog, choose portrait orientation and the matching paper size. Turn off browser headers and footers to keep web addresses and dates off the page. You can also explore our <a href="/name-tracing-worksheets.html">printable name tracing worksheets</a> for related practice ideas. Pro users can enter up to thirty names, one per line, and generate a separate page for each name in the same order.</p>
+      </section>
+
+      <section>
+        <h2>Why name tracing helps early writers</h2>
+        <p>A child’s name is a meaningful place to begin handwriting practice. It appears on classroom cubbies, artwork, birthday cards, and belongings, giving children a familiar reason to notice letters. Working with that familiar word can make a writing activity easier to understand: the marks on the page represent something personal. Naming the letters aloud can also turn a tracing session into a conversation about the order of letters in a word.</p>
+        <p>Tracing provides a visible path to follow while children explore how to control a pencil. Copying into the space beside the example asks them to recall more of the shape themselves. These are related but different tasks, and a child may feel comfortable with one before the other. Keep the gray model available as a reference, and allow children to move between tracing, looking, and trying independently without treating every attempt as a test.</p>
+        <p>A worksheet is one useful practice format, rather than a complete handwriting program. Children also benefit from drawing, making marks during play, and watching an adult demonstrate unfamiliar letters. The handwriting font here provides a consistent model, but individual schools may teach different letter forms. If your child’s classroom uses another style, follow the teacher’s example and use the sheet only where the shapes support that instruction.</p>
+      </section>
+
+      <section>
+        <h2>Tips for parents and teachers</h2>
+        <p>Start with a short, comfortable session and stop before frustration takes over. A few thoughtful attempts can be more useful than filling many pages while tired. Place the worksheet on a stable surface, make sure the child can reach it comfortably, and offer a writing tool they can manage. Encourage a relaxed approach to the pencil rather than asking the child to press hard enough to cover every gray stroke.</p>
+        <p>Demonstrate one letter at a time when the whole name feels overwhelming. Say what you are doing in simple language, then let the child try. Notice specific effort, such as remembering the first letter or leaving space between shapes. Avoid correcting every detail at once. If the name is long, practice a small part verbally or on spare paper before returning to the complete model on the worksheet.</p>
+        <p>For classroom use, review every name and its capitalization before making a batch. Keep completed sheets with the right child, and use school-approved procedures when sharing student work. For children ready to explore joined writing, our <a href="/cursive-name-tracing.html">cursive name tracing</a> page offers another starting point. Introduce script only when it fits the child’s instruction; a decorative joined font should not replace a teacher’s explanation of movement and letter connections.</p>
+      </section>
+
+      <section id="faq">
+        <h2>Frequently asked questions</h2>
+
+        <h3>Is this name tracing generator free?</h3>
+        <p>Yes. The free version creates one name worksheet at a time on A4 paper and includes a small watermark. You can change the letter size, hide the guide lines, and print again. Pro costs $4.99 one-time and adds watermark-free pages, batches of up to 30 names, Letter paper, and a cursive font mode.</p>
+
+        <h3>What age is this worksheet designed for?</h3>
+        <p>The worksheet is intended for children around ages four to seven, with adult support as needed. Readiness varies, so age alone should not determine the task. A child who finds pencil work tiring can start with a shorter session, larger letters, or finger tracing before trying to write independently.</p>
+
+        <h3>Can I save a worksheet as a PDF?</h3>
+        <p>Yes, if your browser or operating system offers Save as PDF in its print dialog. Generate the worksheet, select Print, and choose that destination. Match the paper size to the generator, use portrait orientation, and disable browser headers and footers. Preview the result before saving or printing a classroom set.</p>
+
+        <h3>Are children's names uploaded or stored?</h3>
+        <p>This page processes names in your browser and does not upload them or save them in localStorage. Google Fonts loads the handwriting fonts, and the payment link opens an external checkout. The Pro flag is stored locally in this browser. Printed files and PDFs remain wherever you choose to save them.</p>
+
+        <h3>Does cursive mode teach every letter connection?</h3>
+        <p>No. Cursive mode provides a script-font model for copying, but it does not supply stroke-order arrows or guarantee the exact connections used by a particular school. Compare the model with the handwriting style your child is learning. Use a teacher's demonstration when a letter shape or joining stroke needs explanation.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="container footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/refund.html">Refund policy</a>
+    </nav>
+  </footer>
+
+  <dialog id="pro-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-copy">
+    <h2 id="dialog-title">This is a Pro feature</h2>
+    <p id="dialog-copy">Unlock every worksheet option with a one-time Pro purchase.</p>
+    <div class="dialog-actions">
+      <a id="payment-link" class="button" target="_blank" rel="noopener noreferrer">Unlock for $4.99</a>
+      <button id="close-dialog" class="secondary" type="button">Close</button>
+    </div>
+  </dialog>
+
+  <script>
+    "use strict";
+
+    const PAYMENT_LINK = "https://buy.stripe.com/dRm8wPeZrb53e6f7ue5Rm01";
+    const $ = (id) => document.getElementById(id);
+    const form = $("generator-form");
+    const pages = $("pages");
+    const paperSize = $("paper-size");
+    const cursive = $("cursive");
+    const dialog = $("pro-dialog");
+    const status = $("status");
+
+    let isPro = false;
+    let storageUnavailable = false;
+    let generatedNames = ["Emma"];
+    let lastFocusedElement = null;
+    let resizeFrame = 0;
+
+    try {
+      isPro = localStorage.getItem("nth_pro") === "1";
+    } catch {
+      storageUnavailable = true;
+    }
+
+    const currentURL = new URL(window.location.href);
+    if (currentURL.searchParams.get("unlocked") === "1") {
+      isPro = true;
+      try {
+        localStorage.setItem("nth_pro", "1");
+      } catch {
+        storageUnavailable = true;
+      }
+      currentURL.searchParams.delete("unlocked");
+      try {
+        history.replaceState(history.state, "", currentURL.href);
+      } catch {
+        // Some file-preview environments restrict history changes.
+      }
+    }
+
+    $("payment-link").href = PAYMENT_LINK;
+
+    function notify(message, isError = false) {
+      status.textContent = message;
+      status.classList.toggle("error", isError);
+    }
+
+    function showPaywall(message) {
+      lastFocusedElement = document.activeElement;
+      $("dialog-copy").textContent = message;
+      if (!dialog.open) dialog.showModal();
+    }
+
+    dialog.addEventListener("close", () => {
+      if (lastFocusedElement instanceof HTMLElement) lastFocusedElement.focus();
+    });
+    $("close-dialog").addEventListener("click", () => dialog.close());
+
+    document.querySelectorAll("[data-paywall]").forEach((button) => {
+      button.addEventListener("click", () => {
+        if (!isPro) showPaywall(button.dataset.paywall);
+      });
+    });
+
+    function updateProUI() {
+      document.querySelectorAll("[data-lock], [data-lock-entry]").forEach((element) => {
+        element.hidden = isPro;
+      });
+      $("upgrade").hidden = isPro;
+      $("pro-active").hidden = !isPro;
+      paperSize.options[1].textContent = isPro ? "Letter" : "Letter (Pro)";
+    }
+
+    function validateName(raw) {
+      const name = raw.trim().replace(/\s+/g, " ");
+      if (!name) throw new Error("Please enter a name.");
+      if (name.length > 40) throw new Error("Please keep each name to 40 characters or fewer.");
+      if (!/^[A-Za-z]+(?:[ '\u2019-][A-Za-z]+)*$/.test(name)) {
+        throw new Error("Use English letters separated by spaces, apostrophes, or hyphens.");
+      }
+      return name;
+    }
+
+    function makeElement(tag, className, text) {
+      const element = document.createElement(tag);
+      if (className) element.className = className;
+      if (text !== undefined) element.textContent = text;
+      return element;
+    }
+
+    function makePaper(name, index) {
+      const shell = makeElement("div", "paper-shell");
+      const paper = makeElement("section", "paper");
+      paper.classList.toggle("letter", paperSize.value === "letter");
+      paper.classList.toggle("cursive", isPro && cursive.checked);
+      paper.style.setProperty("--letter-size", $("letter-size").value + "px");
+      paper.setAttribute("aria-label", "Worksheet " + (index + 1) + " for " + name);
+
+      const heading = makeElement("div", "paper-heading");
+      heading.append(
+        makeElement("p", "worksheet-title", "My name practice"),
+        makeElement("p", "worksheet-instruction", "Trace the name. Then write it in the space beside it.")
+      );
+
+      if ($("blank-name").checked) {
+        const blank = makeElement("p", "name-field", "Name:");
+        const line = makeElement("span", "name-line");
+        line.setAttribute("aria-hidden", "true");
+        blank.append(line);
+        heading.append(blank);
+      }
+
+      const rows = makeElement("div", "practice-rows");
+      for (let rowIndex = 0; rowIndex < 3; rowIndex++) {
+        const row = makeElement("div", "trace-row");
+        row.classList.toggle("no-guides", !$("guides").checked);
+
+        for (const position of ["top", "middle", "bottom"]) {
+          const guide = makeElement("span", "guide " + position);
+          guide.setAttribute("aria-hidden", "true");
+          row.append(guide);
+        }
+
+        const slots = makeElement("div", "name-slots");
+        const modelSlot = makeElement("div", "trace-slot");
+        modelSlot.append(makeElement("span", "trace-text", name));
+
+        const blankSlot = makeElement("div", "trace-slot");
+        blankSlot.setAttribute("aria-label", "Write " + name + " here");
+        slots.append(modelSlot, blankSlot);
+        row.append(slots);
+        rows.append(row);
+      }
+
+      paper.append(heading, rows);
+      if (!isPro) {
+        paper.append(makeElement("span", "watermark", "Generated free at nametracinghub.com"));
+      }
+      shell.append(paper);
+      return shell;
+    }
+
+    function fitNames() {
+      document.querySelectorAll(".trace-text").forEach((text) => {
+        const availableWidth = text.parentElement.clientWidth;
+        const naturalWidth = text.offsetWidth;
+        const scale = naturalWidth ? Math.min(1, availableWidth / naturalWidth) : 1;
+        text.style.transform = "scaleX(" + scale + ")";
+      });
+    }
+
+    function resizePreview() {
+      document.querySelectorAll(".paper-shell").forEach((shell) => {
+        const paper = shell.firstElementChild;
+        const scale = Math.min(1, shell.clientWidth / 794);
+        paper.style.transform = "scale(" + scale + ")";
+        shell.style.height = paper.offsetHeight * scale + "px";
+      });
+      fitNames();
+    }
+
+    function scheduleResize() {
+      cancelAnimationFrame(resizeFrame);
+      resizeFrame = requestAnimationFrame(resizePreview);
+    }
+
+    function renderPages() {
+      if (!isPro) {
+        paperSize.value = "a4";
+        cursive.checked = false;
+      }
+      document.body.dataset.paper = paperSize.value;
+      $("page-rule").textContent =
+        "@page { size: " + (paperSize.value === "letter" ? "letter" : "A4") + "; margin: 12mm; }";
+
+      const fragment = document.createDocumentFragment();
+      generatedNames.forEach((name, index) => fragment.append(makePaper(name, index)));
+      pages.replaceChildren(fragment);
+
+      const count = generatedNames.length;
+      $("preview-info").textContent =
+        (paperSize.value === "letter" ? "Letter" : "A4") +
+        " · " + count + (count === 1 ? " page" : " pages");
+
+      resizePreview();
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      try {
+        generatedNames = [validateName($("name").value)];
+        renderPages();
+        notify("Your worksheet is ready.");
+      } catch (error) {
+        notify(error.message, true);
+        $("name").focus();
+      }
+    });
+
+    paperSize.addEventListener("change", () => {
+      if (paperSize.value === "letter" && !isPro) {
+        paperSize.value = "a4";
+        showPaywall("Print on US Letter paper with a one-time Pro purchase.");
+        return;
+      }
+      renderPages();
+    });
+
+    cursive.addEventListener("change", () => {
+      if (cursive.checked && !isPro) {
+        cursive.checked = false;
+        showPaywall("Create script-font name worksheets with a one-time Pro purchase.");
+        return;
+      }
+      renderPages();
+      if (document.fonts) document.fonts.ready.then(scheduleResize);
+    });
+
+    ["letter-size", "guides", "blank-name"].forEach((id) => {
+      $(id).addEventListener("change", renderPages);
+    });
+
+    $("generate-all").addEventListener("click", () => {
+      if (!isPro) {
+        showPaywall("Generate up to 30 individual name worksheets at once with Pro.");
+        return;
+      }
+
+      try {
+        const lines = $("batch-names").value.split(/\r?\n/);
+        const names = [];
+        lines.forEach((line, index) => {
+          if (!line.trim()) return;
+          try {
+            names.push(validateName(line));
+          } catch (error) {
+            throw new Error("Line " + (index + 1) + ": " + error.message);
+          }
+        });
+        if (!names.length) throw new Error("Enter at least one name in the batch box.");
+        if (names.length > 30) throw new Error("Please enter no more than 30 names per batch.");
+        generatedNames = names;
+        renderPages();
+        notify(names.length + (names.length === 1 ? " worksheet is ready." : " worksheets are ready."));
+      } catch (error) {
+        notify(error.message, true);
+        $("batch-names").focus();
+      }
+    });
+
+    $("print").addEventListener("click", async () => {
+      if (document.fonts) {
+        notify("Preparing fonts for printing.");
+        await document.fonts.ready;
+      }
+      fitNames();
+      notify("Your worksheets are ready to print.");
+      window.print();
+    });
+
+    window.addEventListener("beforeprint", fitNames);
+    window.addEventListener("afterprint", scheduleResize);
+    window.addEventListener("resize", scheduleResize);
+
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(scheduleResize).observe(pages);
+    }
+
+    if (document.fonts) {
+      document.fonts.ready.then(scheduleResize);
+      document.fonts.addEventListener("loadingdone", scheduleResize);
+    }
+
+    updateProUI();
+    renderPages();
+    notify(
+      storageUnavailable
+        ? "Browser storage is unavailable; Pro access may not persist after this visit."
+        : "Your worksheet is ready."
+    );
+  </script>
 </body>
 </html>
